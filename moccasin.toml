@@ -5,8 +5,10 @@ dot_env = ".env"
 
 [networks.pyevm]
 is_zksync = false
+default_account_name = "default"
 
 [networks.anvil]
+default_account_name = "anvil0"
 url = "http://127.0.0.1:8545"
 prompt_live = false
 save_to_db = false
