@@ -3,6 +3,10 @@
 interface VRFConsumer:
     def fulfill_random_words(requestId: uint256, randomWords: DynArray[uint256, 1]): nonpayable
 
+@deploy
+def __init__():
+    pass
+
 @external
 def requestRandomWords(
     keyHash: bytes32,
