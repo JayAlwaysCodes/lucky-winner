@@ -80,6 +80,8 @@ def enter_raffle():
     self.player_count += 1
     log EnteredRaffle(msg.sender)
 
+
+
 @external
 def request_winner():
     """
