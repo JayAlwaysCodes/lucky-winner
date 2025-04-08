@@ -64,6 +64,10 @@ def __init__(
     self.raffle_state = RAFFLE_STATE_OPEN
     self.last_timestamp = block.timestamp
 
+# At the bottom of raffle.vy
+event EnteredRaffle:
+    player: indexed(address)
+
 @external
 @payable
 def enter_raffle():
@@ -74,6 +78,7 @@ def enter_raffle():
     assert self.raffle_state == RAFFLE_STATE_OPEN, "Raffle not open"
     self.players[self.player_count] = msg.sender
     self.player_count += 1
+    log EnteredRaffle(msg.sender)
 
 @external
 def request_winner():
